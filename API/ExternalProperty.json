@@ -1,0 +1,10 @@
+{
+  "provider": "VIC-DDP",
+  "requestId": "REQ-12345",
+  "receivedAt": "2025-08-30T03:12:45Z",
+  "formattedAddress": "10 Example St, Carlton VIC 3053",
+  "addressParts": { "street": "10 Example St", "suburb": "Carlton", "state": "VIC", "postcode": "3053" },
+  "lotPlan": { "lot": "12", "plan": "PS123456" },
+  "title": { "volume": "", "folio": "" },
+  "extra": { "confidence": 0.92 }
+}

@@ -1,0 +1,13 @@
+# .NET
+bin/
+obj/
+
+# User-specific
+*.user
+*.suo
+
+# Logs
+*.log
+
+# OS
+.DS_Store

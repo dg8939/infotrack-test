@@ -1,0 +1,92 @@
+/* ---------- Card ---------- */
+
+.property-card {
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+  max-width: 500px;
+  background: #ffffff;
+  color: #000000; /* force black text inside card */
+}
+
+.property-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.property-card-title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.property-card p {
+  margin: 6px 0;
+}
+
+.property-card-edit-button {
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+/* ---------- Modal overlay ---------- */
+
+.property-card-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* ---------- Modal ---------- */
+
+.property-card-modal {
+  background: #ffffff;
+  color: #000000; /* ensure text visible on light bg even in dark theme */
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.property-card-modal h3 {
+  margin-top: 0;
+}
+
+.property-card-modal label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.property-card-modal input {
+  margin-top: 4px;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.property-card-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.property-card-modal-actions button {
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+/* ---------- Errors ---------- */
+
+.property-card-error {
+  color: red;
+  font-size: 12px;
+  margin: 4px 0 0;
+}
