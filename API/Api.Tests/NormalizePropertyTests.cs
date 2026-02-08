@@ -6,7 +6,7 @@ namespace Api.Tests
 {
     public class NormalizePropertyTests
     {
-        // Helper: create an ExternalProperty in the shape YOUR code expects.
+        // External property object
         private ExternalProperty CreateExternal(
             string? formattedAddress = "10 Example St, Carlton VIC 3053",
             string? provider = "VIC-DDP",
@@ -48,6 +48,7 @@ namespace Api.Tests
             };
         }
 
+        // Fact: test case
         [Fact]
         public void PropertyMapping_ThrowsArgumentNull_WhenInputIsNull()
         {
