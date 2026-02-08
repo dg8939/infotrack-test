@@ -1,12 +1,10 @@
-/* ---------- Card ---------- */
-
 .property-card {
   border: 1px solid #ddd;
   padding: 16px;
   border-radius: 8px;
   max-width: 500px;
   background: #ffffff;
-  color: #000000; /* force black text inside card */
+  color: #000000; 
 }
 
 .property-card-header {
@@ -30,7 +28,6 @@
   cursor: pointer;
 }
 
-/* ---------- Modal overlay ---------- */
 
 .property-card-modal-overlay {
   position: fixed;
@@ -42,11 +39,9 @@
   z-index: 1000;
 }
 
-/* ---------- Modal ---------- */
-
 .property-card-modal {
   background: #ffffff;
-  color: #000000; /* ensure text visible on light bg even in dark theme */
+  color: #000000; 
   padding: 20px;
   border-radius: 8px;
   width: 100%;
@@ -82,8 +77,6 @@
   padding: 6px 12px;
   cursor: pointer;
 }
-
-/* ---------- Errors ---------- */
 
 .property-card-error {
   color: red;
