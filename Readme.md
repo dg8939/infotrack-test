@@ -11,7 +11,7 @@ This project implements a small full-stacked slice to normalize external propert
 
 ### Backend (C# / .NET)
 
-**Requirements:** .NET SDK 7+
+**Requirements:** .NET SDK 8.0
 
 cd API
 dotnet build
@@ -27,6 +27,8 @@ cd API/Api.tests
 dotnet test
 
 ### Frontend (React / Typescript)
+
+**Requirements:** Node.js
 
 cd UI/PropertyCard
 npm install
