@@ -1,12 +1,15 @@
 import React from "react";
+
+// Test utilities
 import { describe, it, expect, vi } from "vitest";
+
+// For DOM simulation
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/vitest";
 
 import { PropertyCard } from "./PropertyCard";
 import type { InternalProperty } from "./types";
 
-// Helper to create a default InternalProperty for tests
 const makeProperty = (
   overrides?: Partial<InternalProperty>,
 ): InternalProperty => ({
@@ -22,7 +25,9 @@ const makeProperty = (
   ...overrides,
 });
 
+// Grouping all test
 describe("<PropertyCard />", () => {
+  // Test 1: Checking the basic property details
   it("renders the basic property details", () => {
     const property = makeProperty({
       volumeFolio: { volume: "1234", folio: "567" },
@@ -36,7 +41,7 @@ describe("<PropertyCard />", () => {
       screen.getByRole("heading", { name: /10 example st, carlton vic 3053/i }),
     ).toBeInTheDocument();
 
-    // Lot / Plan label – matches "Lot/Plan:" or "Lot / Plan:"
+    // Lot / Plan label – matches with or without spaces \s*
     expect(screen.getByText(/lot\s*\/\s*plan:/i)).toBeInTheDocument();
 
     // Lot and plan values somewhere in the same paragraph
@@ -67,6 +72,7 @@ describe("<PropertyCard />", () => {
     ).toBeInTheDocument();
   });
 
+  // Test 2: clicking edit open modal and checks if prefilled
   it("opens the modal and pre-fills inputs when Edit is clicked", () => {
     const property = makeProperty({
       volumeFolio: { volume: "1111", folio: "22" },
@@ -96,6 +102,7 @@ describe("<PropertyCard />", () => {
     expect(folioInput.value).toBe("22");
   });
 
+  // Test 3: Check for validation errors
   it("shows validation errors for invalid volume and folio", () => {
     const property = makeProperty();
 
@@ -131,6 +138,7 @@ describe("<PropertyCard />", () => {
     expect(screen.getByRole("dialog")).toBeInTheDocument();
   });
 
+  // Test 4: Check if update is made on the main screen
   it("updates display and calls onChange on successful confirm", () => {
     const property = makeProperty();
     const handleChange = vi.fn();
@@ -176,6 +184,7 @@ describe("<PropertyCard />", () => {
     expect(updatedArg.status).toBe("KnownVolFol");
   });
 
+  // Test 5: Checking if the keyboard keys working or not (trap focus)
   it("closes modal on Close and Escape", () => {
     const property = makeProperty();
 

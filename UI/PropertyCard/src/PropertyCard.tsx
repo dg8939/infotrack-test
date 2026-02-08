@@ -20,6 +20,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
   property,
   onChange,
 }) => {
+  // Different states that stores current values
   const [current, setCurrent] = useState<InternalProperty>(property);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -32,8 +33,10 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({
     property.volumeFolio.folio ?? "",
   );
 
+  // Validation error messages like [1-6] digits only
   const [errors, setErrors] = useState<FieldErrors>({});
 
+  // Traps keyboards focus inside the modal
   const modalRef = useRef<HTMLDivElement | null>(null);
   const firstInputRef = useRef<HTMLInputElement | null>(null);
   const lastFocusRef = useRef<HTMLElement | null>(null);
