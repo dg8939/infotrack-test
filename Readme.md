@@ -21,6 +21,8 @@ This project implements a small full-stacked slice to normalize external propert
 
 In the UI, you can insert the ExternalProperty.json and the API will respond with InternalProperty.
 
+https://github.com/user-attachments/assets/536f3b3a-fdf7-4abc-91d5-02f622b9a32a
+
 Run tests:
 
 cd API/Api.tests
