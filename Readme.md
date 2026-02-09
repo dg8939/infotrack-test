@@ -17,7 +17,7 @@ This project implements a small full-stacked slice to normalize external propert
 - dotnet build
 - $env:ASPNETCORE_ENVIRONMENT="Development"
 - dotnet run
-- http://localhost:<port>/swagger
+- http://localhost:(port>)/swagger
 
 In the UI, you can insert the ExternalProperty.json and the API will respond with InternalProperty.
 
