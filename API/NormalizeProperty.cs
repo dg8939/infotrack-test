@@ -56,7 +56,7 @@ namespace API
 
             if (input.title.volume == "" || input.title.folio == "")
             {
-                output.status = "UnkownVolFol";
+                output.status = "UnknownVolFol";
             }
 
             else
