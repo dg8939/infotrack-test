@@ -13,13 +13,13 @@ This project implements a small full-stacked slice to normalize external propert
 
 **Requirements:** .NET SDK 8.0
 
-cd API
-dotnet build
-dotnet run
+- cd API
+- dotnet build
+- $env:ASPNETCORE_ENVIRONMENT="Development"
+- dotnet run
+- http://localhost:<port>/swagger
 
-The console app reads ExternalProperty.json, calls:
-NormalizeProperty.PropertyMapping(input);
-and prints the normalised InternalProperty JSON.
+In the UI, you can insert the ExternalProperty.json and the API will respond with InternalProperty.
 
 Run tests:
 

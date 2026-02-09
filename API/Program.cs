@@ -1,33 +1,26 @@
 ﻿using API;
-using System;
-using System.IO;
-using System.Text.Json;
 
-class Program
+// Part of ASP.NET Core which helps to create a web application from console app
+var builder = WebApplication.CreateBuilder(args);
+
+// Swagger services
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
 {
-    static void Main()
-    {
-        var json = File.ReadAllText("ExternalProperty.json");
-
-        // Converting JSON into C# object
-        var input = JsonSerializer.Deserialize<ExternalProperty>(json);
-
-        // Safety check
-        if (input == null)
-        {
-            Console.WriteLine("Invalid JSON");
-            return;
-        }
-
-        // Calling the function
-        var output = NormalizeProperty.PropertyMapping(input);
-
-        // Changing C# object into JSON
-        var outputJson = JsonSerializer.Serialize(
-            output,
-            new JsonSerializerOptions { WriteIndented = true } // Makes the output look nicer
-        );
-
-        Console.WriteLine(outputJson);
-    }
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
+app.MapGet("/health", () => Results.Ok("OK"));
+
+app.MapPost("/api/property/normalize", (ExternalProperty p) =>
+{
+    InternalProperty result = NormalizeProperty.PropertyMapping(p);
+    return Results.Ok(result);
+});
+
+app.Run();

@@ -9,9 +9,28 @@ namespace API
                 throw new ArgumentNullException("input");
             }
 
+            // Formatting the address
+            string fullAddress = "";
+
+            if (!string.IsNullOrEmpty(input.formattedAddress))
+            {
+                fullAddress = input.formattedAddress;
+            }
+            else
+            {
+                var parts = input.addressParts;
+                if (parts != null)
+                {
+                    if (!string.IsNullOrEmpty(parts.street) || !string.IsNullOrEmpty(parts.suburb) || !string.IsNullOrEmpty(parts.state) || !string.IsNullOrEmpty(parts.postcode))
+                    {
+                        fullAddress = $"{parts.street}, {parts.suburb} {parts.state} {parts.postcode}".Trim();
+                    }
+                }
+            }
+
             var output = new InternalProperty
             {
-                fullAddress = input.formattedAddress,
+                fullAddress = fullAddress,
                 lotPlan = new InternalPropertyLotPlan
                 {
                     lot = input.lotPlan.lot,
