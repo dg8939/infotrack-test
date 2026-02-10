@@ -15,6 +15,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// datapoints
 app.MapGet("/health", () => Results.Ok("OK"));
 
 app.MapPost("/api/property/normalize", (ExternalProperty p) =>

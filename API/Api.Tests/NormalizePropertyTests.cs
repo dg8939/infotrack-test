@@ -49,6 +49,7 @@ namespace Api.Tests
         }
 
         // Fact: test case
+        // Test case 1: Checking Null input
         [Fact]
         public void PropertyMapping_ThrowsArgumentNull_WhenInputIsNull()
         {
@@ -59,6 +60,7 @@ namespace Api.Tests
             );
         }
 
+        // Test case 2: Mapping address
         [Fact]
         public void PropertyMapping_MapsFullAddress_FromFormattedAddress()
         {
@@ -71,6 +73,7 @@ namespace Api.Tests
             Assert.Equal("10 Example St, Carlton VIC 3053", result.fullAddress);
         }
 
+        // Test case 3: Mapping lots and plans
         [Fact]
         public void PropertyMapping_MapsLotPlan_Directly()
         {
@@ -83,6 +86,7 @@ namespace Api.Tests
             Assert.Equal("PS123456", result.lotPlan.plan);
         }
 
+        // Test case 4: Checking status when volume and folio are not empty
         [Fact]
         public void PropertyMapping_MapsVolumeFolio_WhenNonEmpty()
         {
@@ -97,6 +101,7 @@ namespace Api.Tests
             Assert.Equal("KnownVolFol", result.status);
         }
 
+        // Test case 5: Checking status when volume and folio are empty
         [Fact]
         public void PropertyMapping_NullsVolumeAndFolio_WhenEmptyStrings()
         {
@@ -110,6 +115,7 @@ namespace Api.Tests
             Assert.Equal("UnknownVolFol", result.status);
         }
 
+        // Test case 6: Checking status when only volume is empty
         [Fact]
         public void PropertyMapping_SetsUnkownVolFol_WhenOnlyVolumeEmpty()
         {
@@ -122,6 +128,7 @@ namespace Api.Tests
             Assert.Equal("UnknownVolFol", result.status);
         }
 
+        // Test case 7: Checking status when only folio is empty
         [Fact]
         public void PropertyMapping_SetsUnkownVolFol_WhenOnlyFolioEmpty()
         {
@@ -134,6 +141,7 @@ namespace Api.Tests
             Assert.Equal("UnknownVolFol", result.status);
         }
 
+        // Test case 8: Mapping source trace
         [Fact]
         public void PropertyMapping_MapsSourceTrace_Directly()
         {
