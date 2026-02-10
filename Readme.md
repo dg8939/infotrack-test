@@ -30,13 +30,13 @@ Run tests:
 
 **Requirements:** Node.js
 
-cd UI/PropertyCard
-npm install
-npm run dev
+- cd UI/PropertyCard
+- npm install
+- npm run dev
 
 Run tests:
-cd UI/PropertyCard
-npm test
+- cd UI/PropertyCard
+- npm test
 
 ### SQL
 
@@ -44,12 +44,12 @@ SQL answers and the recommended index are included in the property.sql file and 
 
 ## Time Spent
 
-- Backend mapping and tests ~ 1.5hrs
+- Backend mapping and tests ~ 2 hrs
 - UI and tests ~ 2 hrs
 - SQL ~ 1 hr
 - Documentation ~ 30 mins
 
-Total ~ 5 hrs
+Total ~ 5.5 hrs
 
 ## Assumptions
 
